@@ -1,0 +1,13 @@
+name: d8-graphql-scaffold
+recipe: drupal8
+config:
+  webroot: src/web
+tooling:
+  # Point composer to the right docroot.
+  composer:
+    service: appserver
+    cmd: composer --working-dir=/app/src
+  # Point drush to the right docroot.
+  drush:
+    service: appserver
+    cmd: drush --root=/app/src/web
